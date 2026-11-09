@@ -1,1 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MR CHICKENVERSE</title>
+<meta name="theme-color" content="#050608">
 
+<style>
+*{
+ margin:0;
+ padding:0;
+ box-sizing:border-box;
+}
+html{
+ scroll-behavior:smooth;
+}
+body{
+ background:#050608;
+ color:white;
+ font-family:Arial,sans-serif;
+ overflow-x:hidden;
+}
+/* NIGHT SKY */
+
+.hero{
+ min-height:690px;
+ position:relative;
+ overflow:hidden;
+ background:
+ radial-gradient(ellipse at 50% 100%,
+ #254d27 0%,transparent 55%),
+ linear-gradient(180deg,
+ #02040b 0%,
+ #07111e 55%,
+ #101c20 100%);
+}
+
+.stars{
+ position:absolute;
+ inset:0;
+ background-image:
+ radial-gradient(white 1px,transparent 1px),
+ radial-gradient(#b7e8ff 1px,transparent 1px);
+ background-size:65px 65px,110px 110px;
+ opacity:.65;
+}
+
+.moon{
+ position:absolute;
+ top:90px;
+ right:12%;
+ width:85px;
+ height:85px;
+ border-radius:50%;
+ background:#fff2c2;
+ box-shadow:0 0 45px #fff0b5;
+}
+/* MINECRAFT PLAINS */
+
+.plains{
+ position:absolute;
+ bottom:0;
+ width:100%;
+ height:125px;
+ background:
+ linear-gradient(to bottom,
+ #65b83d 0px,
+ #65b83d 18px,
+ #315d22 18px,
+ #24431c 100%);
+ border-top:5px solid #8bd84b;
+}
+
+.plains:before{
+ content:"";
+ position:absolute;
+ top:-30px;
+ left:0;
+ width:100%;
+ height:30px;
+ background:
+ linear-gradient(135deg,
+ transparent 50%,#477c2d 50%);
+ opacity:.7;
+}
+/* HEADER */
+
+header{
+ position:relative;
+ z-index:5;
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ padding:22px 6%;
+ background:#050608bd;
+ border-bottom:1px solid #263c2a;
+}
+
+.logo{
+ font-size:22px;
+ font-weight:1000;
+ color:#72ff76;
+ text-shadow:0 0 15px #38e34d;
+}
+
+nav{
+ display:flex;
+ gap:22px;
+}
+
+nav a{
+ color:white;
+ text-decoration:none;
+ font-size:13px;
+ font-weight:bold;
+}
+
+nav a:hover{
+ color:#75ff7c;
+}
+/* HERO */
+
+.hero-content{
+ position:relative;
+ z-index:2;
+ text-align:center;
+ padding:65px 15px 160px;
+}
+
+.hero-content h1{
+ font-size:clamp(35px,7vw,68px);
+ color:#75ff78;
+ font-weight:1000;
+ text-shadow:
+ 0 0 15px #30df4b,
+ 0 0 35px #148d31;
+}
+
+.subtitle{
+ margin-top:14px;
+ color:#d0d8d1;
+ letter-spacing:3px;
+ font-size:12px;
+}
+
+.hero-button{
+ display:inline-block;
+ margin-top:30px;
+ padding:15px 35px;
+ background:#55e963;
+ color:#061007;
+ border-radius:8px;
+ text-decoration:none;
+ font-weight:900;
+ box-shadow:0 0 25px #39e94e;
+}
+/* BIG CHICKEN */
+
+.big-chicken{
+ font-size:clamp(130px,25vw,230px);
+ line-height:1.2;
+ margin:15px auto 0;
+ display:block;
+ filter:drop-shadow(0 15px 20px #000);
+ animation:chickenFloat 3s ease-in-out infinite;
+}
+
+@keyframes chickenFloat{
+ 0%,100%{transform:translateY(0);}
+ 50%{transform:translateY(-15px);}
+}
+
+.hero-button:hover{
+ transform:scale(1.07);
+ box-shadow:0 0 40px #55ff66;
+}
+/* MAIN CONTENT */
+
+main{
+ background:#080d09;
+ padding:55px 6%;
+}
+
+.section-title{
+ text-align:center;
+ font-size:29px;
+ color:#75ff7b;
+ margin-bottom:30px;
+}
+
+.cards{
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:20px;
+}
+
+.card{
+ display:block;
+ padding:30px 12px;
+ text-align:center;
+ text-decoration:none;
+ color:white;
+ background:linear-gradient(145deg,#19251b,#0c120e);
+ border:1px solid #315a37;
+ border-radius:14px;
+ transition:.3s;
+}
+.card:hover{
+ transform:translateY(-8px);
+ border-color:#6aff76;
+ box-shadow:0 0 22px #36d64d55;
+}
+
+.card-icon{
+ display:block;
+ font-size:48px;
+ margin-bottom:15px;
+}
+
+.card h3{
+ font-size:18px;
+}
+
+.card p{
+ margin-top:9px;
+ color:#a9b5aa;
+ font-size:12px;
+}
+
+/* PREMIUM VAULT */
+
+.premium{
+ margin:55px auto;
+ max-width:850px;
+ padding:40px 20px;
+ text-align:center;
+ background:linear-gradient(135deg,
+ #241a08,#100e09,#39280d);
+ border:2px solid #c79c3e;
+ border-radius:18px;
+ box-shadow:0 0 25px #c99b3540;
+}
+.premium h2{
+ color:#ffdc83;
+ font-size:30px;
+ margin-bottom:15px;
+}
+
+.premium p{
+ color:#e7d5aa;
+ margin-bottom:22px;
+}
+
+.premium a{
+ display:inline-block;
+ padding:13px 30px;
+ border-radius:8px;
+ background:linear-gradient(90deg,
+ #d49b32,#ffe6a0);
+ color:#1c1406;
+ text-decoration:none;
+ font-weight:900;
+}
+
+/* FOOTER */
+
+footer{
+ background:#030504;
+ text-align:center;
+ padding:35px 15px;
+ border-top:1px solid #263b2a;
+ color:#aab5ab;
+ font-size:13px;
+}
+footer strong{
+ color:#75ff7b;
+ font-size:19px;
+}
+
+footer p{
+ margin-top:12px;
+}
+
+/* ANIMATIONS */
+
+.hero-content{
+ animation:appear 1.2s ease;
+}
+
+@keyframes appear{
+ from{
+  opacity:0;
+  transform:translateY(25px);
+ }
+ to{
+  opacity:1;
+  transform:translateY(0);
+ }
+}
+/* MOBILE RESPONSIVE */
+
+@media(max-width:700px){
+
+ header{
+  flex-direction:column;
+  gap:18px;
+ }
+
+ nav{
+  gap:15px;
+ }
+
+ nav a{
+  font-size:11px;
+ }
+
+ .hero{
+  min-height:630px;
+ }
+
+ .hero-content{
+  padding-top:75px;
+ }
+
+ .cards{
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+ }
+
+ .card{
+  padding:25px 8px;
+ }
+
+ .section-title{
+  font-size:23px;
+ }
+
+ .premium h2{
+  font-size:24px;
+ }
+
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero" id="home">
+
+<div class="stars"></div>
+<div class="moon"></div>
+
+<header>
+ <div class="logo">🐔 MR CHICKENVERSE</div>
+
+ <nav>
+  <a href="#home">HOME</a>
+  <a href="#categories">EXPLORE</a>
+  <a href="#premium">PREMIUM</a>
+ </nav>
+</header>
+
+<div class="hero-content">
+
+ <h1>MR CHICKENVERSE</h1>
+
+ <p class="subtitle">
+ MINECRAFT • ADDONS • SKINS • MAPS & MORE
+ </p>
+
+ <span class="big-chicken">🐔</span>
+
+ <a href="#categories" class="hero-button">
+ EXPLORE NOW →
+ </a>
+
+</div>
+
+<div class="plains"></div>
+
+</section>
+
+<main>
+
+<section id="categories">
+
+<h2 class="section-title">
+🐔 EXPLORE CHICKENVERSE
+</h2>
+
+<div class="cards">
+
+<a href="addon.html" class="card">
+<span class="card-icon">🧩</span>
+<h3>ADDONS</h3>
+<p>Explore Minecraft Addons</p>
+</a>
+
+<a href="skins.html" class="card">
+<span class="card-icon">👕</span>
+<h3>SKINS</h3>
+<p>Discover New Skins</p>
+</a>
+
+<a href="textures.html" class="card">
+<span class="card-icon">🎨</span>
+<h3>TEXTURES</h3>
+<p>Explore Texture Packs</p>
+</a>
+
+<a href="maps.html" class="card">
+<span class="card-icon">🌍</span>
+<h3>MAPS</h3>
+<p>Discover New Worlds</p>
+</a>
+
+</div>
+</section>
+
+<section class="premium" id="premium">
+
+<h2>👑 CHICKEN PREMIUM VAULT</h2>
+
+<p>
+Exclusive Minecraft collections are waiting!
+</p>
+
+<a href="premium.html">
+ENTER THE VAULT →
+</a>
+
+</section>
+
+</main>
+
+<footer>
+
+<strong>🐔 MR CHICKENVERSE</strong>
+
+<p>Minecraft • Addons • Skins • Textures • Maps</p>
+
+<p>© 2026 MR CHICKENVERSE</p>
+
+</footer>
+
+</body>
+</html>
